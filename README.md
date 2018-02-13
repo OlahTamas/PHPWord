@@ -1,1 +1,3 @@
-This is a fork of the excellent PHPWord library, with my own modifications to the handling of the formatting of tables of contents. 
+This is a fork of the excellent PHPWord library, with my own modifications to the handling of the formatting of tables of contents.
+- I've added a small change to the Word 2007 Frame writer beacuse the original z-index handling based on PHP_MAXINT and caused compatibility issues. The idea was not mine, but can't remember where I've found it
+- If "TJ x" and "TOC x" paragraph styles and "font_TJ x" and "font_TOC x" font styles are added, they will be used to format the respective rows of tables of contents. In the current state these seem to work under both LibreOffice 5.x and Word 365, and persist across saves (something that is not possible in the former btw). The TJ/TOC styles are supposed to be the same, but some translation issues make both necessary in Word (at least in the Hungarian version I've been using to test them).
